@@ -16,6 +16,16 @@ const app = new Koa()
 
 app.use((ctx,next)=>{
     ctx.body = 'hello world'
+    // ctx 中整合了request responese req和res
+    // koa 自己实现的request response
+    // http 原生的req和res
+    console.log(ctx.req.url)
+    console.log(ctx.requset.req.url)
+
+    //--------------------------
+    console.log(ctx.requset.url) // 内部使用了url模块进行了解析
+    console.log(ctx.url)
+
 })
 app.on('error',(err)=>{
     console.log(err)
