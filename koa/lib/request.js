@@ -11,6 +11,6 @@ const request = {
     get query(){
         return url.parse(this.req.url).query
     },
-    }
+    //...
 }
 module.exports = request
